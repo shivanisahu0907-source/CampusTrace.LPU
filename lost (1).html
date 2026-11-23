@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost Items - CampusTrace 😭</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <span class="logo-emoji">🔍</span>
+                <span class="brand-name">Campus<span class="highlight">Trace</span></span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="lost.html" class="active">Lost Items</a></li>
+            <li><a href="found.html">Found Items</a></li>
+            <li><a href="report.html">Report</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Lost Items 😭</h1>
+        <p>Scroll through to see if your lost item has been reported by someone</p>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search lost items... 🔎" onkeyup="searchItems()">
+            <button onclick="searchItems()">Search</button>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <div class="items-list">
+        <div class="filter-tabs">
+            <button class="filter-tab active" onclick="filterItems('all', this)">All 📋</button>
+            <button class="filter-tab" onclick="filterItems('lost', this)">Lost 😭</button>
+            <button class="filter-tab" onclick="filterItems('found', this)">Found ✅</button>
+        </div>
+
+        <!-- Items Grid -->
+        <div class="items-grid" id="reportedItems">
+            <!-- Pre-loaded sample items -->
+            <div class="item-card slide-up">
+                <div class="item-badge lost-badge">LOST</div>
+                <div class="item-emoji">📱</div>
+                <h3>iPhone 15</h3>
+                <p class="item-location">📍 Block 34, Room 201</p>
+                <p class="item-date">🕐 2 hours ago</p>
+                <p class="item-desc">Black colour iPhone with cracked screen protector. Has a BTS phone cover 💜. Last seen during DSA class.</p>
+                <p style="font-size: 13px; color: #00ff88;">📞 +91 98765 XXXXX</p>
+            </div>
+
+            <div class="item-card slide-up">
+                <div class="item-badge lost-badge">LOST</div>
+                <div class="item-emoji">💳</div>
+                <h3>Student ID Card</h3>
+                <p class="item-location">📍 Uni Cafeteria</p>
+                <p class="item-date">🕐 1 day ago</p>
+                <p class="item-desc">LPU Student ID, Reg No. 12300XXX. Need it urgently for attendance pls 🥺🙏</p>
+                <p style="font-size: 13px; color: #00ff88;">📞 +91 87654 XXXXX</p>
+            </div>
+
+            <div class="item-card slide-up">
+                <div class="item-badge lost-badge">LOST</div>
+                <div class="item-emoji">🎒</div>
+                <h3>Black Backpack</h3>
+                <p class="item-location">📍 Block 32 Canteen</p>
+                <p class="item-date">🕐 2 days ago</p>
+                <p class="item-desc">Wildcraft black backpack with laptop inside (HP Pavilion). Has some stickers on it 😩</p>
+                <p style="font-size: 13px; color: #00ff88;">📞 +91 76543 XXXXX</p>
+            </div>
+
+            <div class="item-card slide-up">
+                <div class="item-badge lost-badge">LOST</div>
+                <div class="item-emoji">🔑</div>
+                <h3>Hostel Room Keys</h3>
+                <p class="item-location">📍 Near Subway (Block 34)</p>
+                <p class="item-date">🕐 3 days ago</p>
+                <p class="item-desc">Lost my hostel room keys with a cute panda keychain 🐼. Room no. 408, Block 38.</p>
+                <p style="font-size: 13px; color: #00ff88;">📞 +91 65432 XXXXX</p>
+            </div>
+
+            <div class="item-card slide-up">
+                <div class="item-badge lost-badge">LOST</div>
+                <div class="item-emoji">👓</div>
+                <h3>Prescription Glasses</h3>
+                <p class="item-location">📍 C Block Lab</p>
+                <p class="item-date">🕐 4 days ago</p>
+                <p class="item-desc">Black frame glasses in a blue case. Can't see the board without them fr 💀</p>
+                <p style="font-size: 13px; color: #00ff88;">📞 +91 54321 XXXXX</p>
+            </div>
+
+            <div class="item-card slide-up">
+                <div class="item-badge lost-badge">LOST</div>
+                <div class="item-emoji">📚</div>
+                <h3>Engineering Maths Book</h3>
+                <p class="item-location">📍 Library 2nd Floor</p>
+                <p class="item-date">🕐 5 days ago</p>
+                <p class="item-desc">B.S. Grewal Maths book. I know nobody reads it but I need it for exams 😂📖</p>
+                <p style="font-size: 13px; color: #00ff88;">📞 +91 43210 XXXXX</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align: center; margin-top: 50px;">
+            <p style="color: #aaa; margin-bottom: 15px;">Can't find your item here? Report it!</p>
+            <a href="report.html" class="btn btn-primary">Report Lost Item ➡️</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-emoji">🔍</span>
+                <span class="brand-name">Campus<span class="highlight">Trace</span></span>
+                <p>Made with ❤️ and chai ☕ by CSE students</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="../index.html">Home</a>
+                <a href="lost.html">Lost Items</a>
+                <a href="found.html">Found Items</a>
+                <a href="report.html">Report Item</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us 📞</h4>
+                <p>📧 campustrace@lpu.in</p>
+                <p>📱 +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 CampusTrace | All Rights Reserved 😅</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

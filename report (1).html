@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Item - CampusTrace 📝</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html">
+                <span class="logo-emoji">🔍</span>
+                <span class="brand-name">Campus<span class="highlight">Trace</span></span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="lost.html">Lost Items</a></li>
+            <li><a href="found.html">Found Items</a></li>
+            <li><a href="report.html" class="active">Report</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Report an Item 📝</h1>
+        <p>Lost or found something? Fill this form and we'll handle the rest 💪</p>
+    </section>
+
+    <!-- Report Form -->
+    <div class="form-section">
+        <form class="report-form" id="reportForm" onsubmit="submitReport(event)">
+            <h2 style="text-align: center; margin-bottom: 25px; color: #00ff88;">Fill the Details ✍️</h2>
+
+            <!-- Lost or Found -->
+            <div class="form-group">
+                <label>What happened? 🤔</label>
+                <select name="type" required>
+                    <option value="" disabled selected>Select one...</option>
+                    <option value="lost">I Lost Something 😭</option>
+                    <option value="found">I Found Something 🎉</option>
+                </select>
+            </div>
+
+            <!-- Item Name -->
+            <div class="form-group">
+                <label>Item Name 📦</label>
+                <input type="text" name="itemName" placeholder="e.g. iPhone 15, Student ID, Keys..." required>
+            </div>
+
+            <!-- Category & Date -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Category 🏷️</label>
+                    <select name="category" required>
+                        <option value="" disabled selected>Select category...</option>
+                        <option value="electronics">📱 Electronics</option>
+                        <option value="accessories">👓 Accessories</option>
+                        <option value="documents">📄 Documents / ID</option>
+                        <option value="clothing">👕 Clothing</option>
+                        <option value="keys">🔑 Keys</option>
+                        <option value="bags">🎒 Bags</option>
+                        <option value="books">📚 Books / Notes</option>
+                        <option value="other">📦 Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Date 📅</label>
+                    <input type="date" name="date" required>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="form-group">
+                <label>Location 📍</label>
+                <input type="text" name="location" placeholder="e.g. Block 34, Library, Cafeteria..." required>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label>Description 📝</label>
+                <textarea name="description" placeholder="Describe the item in detail... color, brand, any special marks, etc. The more detail the better! 🫡" required></textarea>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Your Name 👤</label>
+                    <input type="text" name="reporterName" placeholder="Your name..." required>
+                </div>
+                <div class="form-group">
+                    <label>Contact 📞</label>
+                    <input type="text" name="contact" placeholder="Phone / Instagram ID..." required>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="form-submit">
+                <button type="submit" class="btn btn-primary btn-large">Submit Report 🚀</button>
+            </div>
+        </form>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            <div class="success-emoji">🎉</div>
+            <h2>Report Submitted Successfully!</h2>
+            <p>Your report has been saved. We hope you find your item soon! 🤞</p>
+            <p style="margin-top: 10px; color: #888;">Pro tip: Share this website with your batchmates for better reach 📲</p>
+            <div style="margin-top: 25px;">
+                <a href="lost.html" class="btn btn-secondary" style="margin-right: 10px;">View Lost Items</a>
+                <a href="found.html" class="btn btn-primary">View Found Items</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-emoji">🔍</span>
+                <span class="brand-name">Campus<span class="highlight">Trace</span></span>
+                <p>Made with ❤️ and chai ☕ by CSE students</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="../index.html">Home</a>
+                <a href="lost.html">Lost Items</a>
+                <a href="found.html">Found Items</a>
+                <a href="report.html">Report Item</a>
+                <a href="about.html">About Us</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us 📞</h4>
+                <p>📧 campustrace@lpu.in</p>
+                <p>📱 +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 CampusTrace | All Rights Reserved 😅</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
